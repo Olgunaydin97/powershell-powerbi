@@ -1,0 +1,11 @@
+$PBIAdminUPN=" KULLANICI ADINIZI GİRİNİZ "
+$PBIAdminPW =" ŞİFRENİZİ GİRİNİZ     "
+
+$Security = ConvertTo-SecureString $PBIAdminPW -AsPlainText -Force
+$Credential = New-Object System.Management.Automation.PSCredential($PBIAdminUPN, $Security)
+
+Connect-PowerBIServiceAccount 
+
+$serverName                  = " DB'DEKİ SUNUCU İSMİNİ GİRİNİZ     "
+$databaseName                = " DB İSMİNİ GİRİNİZ "
+$tableName                   = " BACKUP İŞLEMİNİN INSERT YAPILACAĞI TABLOYU GİRİNİZ      "
